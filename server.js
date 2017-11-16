@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'client')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.use('/', index);
+app.use('/api', index);
 app.use('/api', listas);
 app.use('/api', productos);
 
