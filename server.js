@@ -6,7 +6,7 @@ var index = require('./routes/index');
 var listas = require('./routes/listas');
 var productos = require('./routes/productos');
 
-var port = 3000;
+const port = process.env.PORT || 3000  
 
 var app = express();
 
@@ -26,6 +26,6 @@ app.use('/api', index);
 app.use('/api', listas);
 app.use('/api', productos);
 
-app.listen(port, function(){
-    console.log('Server started on port '+port);
+app.listen(app.get('port'), function(){
+    console.log('Server started on port '+app.get('port'));
 });
